@@ -39,7 +39,7 @@ if prompt:
     st.session_state.messages.append({"role": "user", "content": prompt})
 
     # Check if Hugging Face Token is provided
-    api_key = ""  # Make sure to manage your API keys securely
+    api_key = st.secrets["hugging_face_token"]["api_key"]  # Make sure to manage your API keys securely
 
     # Generate image
     headers = {"Authorization": f"Bearer {api_key}"}
